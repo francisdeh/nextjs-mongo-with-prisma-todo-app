@@ -32,7 +32,7 @@ export default function Home() {
     fetchTodos();
   };
 
-  const handleOnCheck = (id: number) => {
+  const handleOnCheck = (id: string) => {
     fetch("/api/todo", {
       method: "PUT",
       headers: {
@@ -47,8 +47,8 @@ export default function Home() {
     fetchTodos();
   };
 
-  const handleOnDelete = (id: number) => {
-    const res = fetch("/api/todo", {
+  const handleOnDelete = (id: string) => {
+    fetch("/api/todo", {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -56,8 +56,6 @@ export default function Home() {
       body: JSON.stringify({ id }),
     });
     fetchTodos();
-
-    // setTodos((prev) => prev.filter((todo) => todo.id !== id));
   };
 
   return (

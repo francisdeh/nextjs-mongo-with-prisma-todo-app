@@ -1,5 +1,3 @@
-"use client";
-
 import { useRef, useEffect } from "react";
 import { FaPlusCircle } from "react-icons/fa";
 
@@ -8,7 +6,9 @@ interface FormProps {
 }
 
 export default function Form({ onAddTodo }: FormProps) {
-  const inputRef = useRef<HTMLInputElement | null>();
+  const inputRef = useRef<HTMLInputElement | null>(
+    null
+  ) as React.MutableRefObject<HTMLInputElement | null>;
 
   useEffect(() => {
     inputRef.current?.focus!();

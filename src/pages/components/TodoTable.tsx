@@ -3,12 +3,12 @@ import { FaTrash } from "react-icons/fa";
 
 interface TodoTableProps {
   todos: Todo[];
-  onCheck: (id: number) => void;
-  onDelete: (id: number) => void;
+  onCheck: (id: string) => void;
+  onDelete: (id: string) => void;
 }
 
 export default function TodoTable({
-  todos,
+  todos = [],
   onCheck,
   onDelete,
 }: TodoTableProps) {
